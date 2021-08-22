@@ -21,14 +21,8 @@ button,
   will-change: background-color, opacity, color, box-shadow;
   box-shadow: 0 2px 4px 0 rgba($button-primary, 0.08);
 
-  &[disabled] {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-  &.disabled {
-    opacity: 0.5 !important;
-    pointer-events: none !important;
+  &:focus-visible {
+    outline: 1px dotted ButtonText;
   }
 
   &.button--primary {
@@ -40,7 +34,7 @@ button,
       background-color: lighten($button-primary, 3);
     }
   }
-  
+
   &.button--secondary {
     background-color: $bg-water;
     color: $black;

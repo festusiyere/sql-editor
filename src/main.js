@@ -6,7 +6,7 @@ import {$axios} from './plugins/axios'
 // Importing style
 require('@/assets/scss/main.scss')
 
-// Declaring axios globally
+// Adding axios to vue instance
 Vue.prototype.$axios = $axios
 
 Vue.config.productionTip = false

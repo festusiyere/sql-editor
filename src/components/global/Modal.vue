@@ -44,9 +44,12 @@ export default {
     }
   },
   methods: {
+    // Method to open the modal
     close() {
       this.isOpen = false
     },
+
+    // Method to open the modal
     open() {
       this.isOpen = true
     }

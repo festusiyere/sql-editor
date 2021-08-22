@@ -22,6 +22,7 @@ export default {
     }
   },
   methods: {
+    // Submit query to server
     async submitQuery(query) {
       try {
         this.isLoading = true
@@ -29,7 +30,6 @@ export default {
 
         //  Sort the result based on  the primary key
         data.sort((a, b) => {
-          // eslint-disable-next-line no-unused-vars
           let primaryKey = Object.keys(a)[0]
           return a[primaryKey] - b[primaryKey]
         })

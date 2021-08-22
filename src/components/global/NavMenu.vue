@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <header>
     <nav class="navbar">
       <div class="logo">
         <svg width="135" height="37" viewBox="0 0 135 37" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +15,7 @@
       </div>
       <div class="title">SQL Editor</div>
     </nav>
-  </div>
+  </header>
 </template>
 
 <script>

@@ -1,11 +1,11 @@
 <template>
   <div class="main-wrapper">
-    <!-- Side Nav Bar -->
+    <!--  Nav Bar -->
     <NavMenu />
-    <div class="page-content">
+    <main class="page-content">
       <!-- Page Content View -->
       <router-view />
-    </div>
+    </main>
   </div>
 </template>
 

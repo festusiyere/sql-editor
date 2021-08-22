@@ -13,7 +13,7 @@ textarea {
   transition: border ease-in-out 300ms;
 
   &:focus {
-    border: 1px solid darken($color: $bg-mint, $amount: 7%);
+    border: 1px solid lighten($black, 50);
     outline: none;
   }
 }
