@@ -25,21 +25,21 @@ npm run test:unit
 **Before Optimizations**
 
 ```
-**Time to Interactive:** 3.6 s
+Time to Interactive: 3.6 s
 ```
 
 ```
-**Speed Index:** 3.7 s
+Speed Index: 3.7 s
 ```
 
 **After Optimizations**
 
 ```
-**Time to Interactive:** 2.7s
+Time to Interactive: 2.7s
 ```
 
 ```
-**Speed Index:** 2.7 s
+Speed Index: 2.7 s
 ```
 For Optimizations, images were replaced with svgs, unused fonts were removed.
 ### NOTE:
