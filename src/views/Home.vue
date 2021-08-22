@@ -26,7 +26,15 @@ export default {
       try {
         this.isLoading = true
         const {data} = await new QueryService(this).getResults(query)
-        this.results = [...data]
+
+        //  Sort the result based on  the primary key
+        data.sort((a, b) => {
+          // eslint-disable-next-line no-unused-vars
+          let primaryKey = Object.keys(a)[0]
+          return a[primaryKey] - b[primaryKey]
+        })
+
+        this.results = data
         this.isLoading = false
       } catch (error) {
         this.results = []
