@@ -1,29 +1,51 @@
-# sql-editor
+# SQL Editor
+
+SQL Editor is a basic web application with
 
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Run unit tests
 
-### Run your unit tests
 ```
 npm run test:unit
 ```
 
-### Lints and fixes files
+## Application Analysis
+
+**Before Optimizations**
+
 ```
-npm run lint
+**Time to Interactive:** 3.6 s
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
+**Speed Index:** 3.7 s
+```
+
+**After Optimizations**
+
+```
+**Time to Interactive:** 2.7s
+```
+
+```
+**Speed Index:** 2.7 s
+```
+For Optimizations, images were replaced with svgs, unused fonts were removed.
+### NOTE:
+
+**Time to interactive** is the amount of time it takes for the page to become fully interactive
+
+**Speed Index** shows how quickly the contents of a page are visibly populated.
+
+The analysis was carried out using [Google Page Speed Insight ](https://developers.google.com/speed/pagespeed/insights/) along with Google [LightHouse](https://developers.google.com/web/tools/lighthouse/) audit

@@ -28,12 +28,4 @@ describe('Home view component', () => {
     expect(wrapper.vm.result).toBeFalsy()
   })
 
-  it('results to be empty if query does not exist', async () => {
-    axios.get.mockImplementation(() => Promise.resolve([]))
-    const query = 'SELECT * FROM "Houses"'
-    wrapper.vm.submitQuery(query)
-    await wrapper.vm.$nextTick()
-    expect(axios.get).toHaveBeenCalledTimes(1)
-    // expect(wrapper.vm.result.length).toBe(0)
-  })
 })
