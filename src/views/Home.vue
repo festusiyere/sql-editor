@@ -1,18 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="">
+    <EditorComponent @submitQuery="submitQuery" :isLoading="isLoading" />
+    <transition mode="out-in" name="fade">
+      <TableComponent v-if="results" :results="results" />
+    </transition>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import {QueryService} from '@/services'
+import EditorComponent from '@/components/home/EditorComponent.vue'
+import TableComponent from '@/components/home/TableComponent.vue'
 export default {
-  name: "Home",
   components: {
-    HelloWorld,
+    TableComponent,
+    EditorComponent
   },
-};
+  data() {
+    return {
+      isLoading: false,
+      results: null
+    }
+  },
+  methods: {
+    async submitQuery(query) {
+      try {
+        this.isLoading = true
+        const {data} = await new QueryService(this).getResults(query)
+        this.results = [...data]
+        this.isLoading = false
+      } catch (error) {
+        this.results = []
+        this.isLoading = false
+      }
+    }
+  }
+}
 </script>

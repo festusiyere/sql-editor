@@ -1,0 +1,39 @@
+.d-flex {
+  display: flex;
+
+  &.flex-column {
+    flex-direction: column;
+  }
+  &.between {
+    justify-content: space-between;
+  }
+
+  &.start {
+    justify-content: flex-start !important;
+  }
+
+  &.middle {
+    align-items: center;
+  }
+
+  &.top {
+    align-items: top;
+  }
+
+  &.bottom {
+    align-items: flex-end;
+  }
+}
+
+.fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.fade-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}

@@ -1,0 +1,21 @@
+// Importing core styles
+@import 'core/reset';
+@import 'core/font';
+@import 'core/variables';
+@import 'core/mixins';
+@import 'core/typography';
+@import 'core/layout';
+
+// Importing Utilities
+@import 'utils/utilities';
+
+// Importing views
+@import 'views/home';
+
+// Importing Components
+@import 'components/buttons';
+@import 'components/editor';
+@import 'components/form';
+@import 'components/modal';
+@import 'components/nav';
+@import 'components/table';
