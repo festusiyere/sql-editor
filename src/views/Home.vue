@@ -28,7 +28,7 @@ export default {
         this.isLoading = true
         const {data} = await new QueryService(this).getResults(query)
 
-        //  Sort the result based on  the primary key
+         Sort the result based on  the primary key
         data.sort((a, b) => {
           let primaryKey = Object.keys(a)[0]
           return a[primaryKey] - b[primaryKey]
