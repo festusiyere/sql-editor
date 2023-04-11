@@ -18,7 +18,8 @@ export default {
   data() {
     return {
       isLoading: false,
-      results: null
+      results: null,
+      errors: null
     }
   },
   methods: {
@@ -28,7 +29,7 @@ export default {
         this.isLoading = true
         const {data} = await new QueryService(this).getResults(query)
 
-         Sort the result based on  the primary key
+        //  Sort the result based on  the primary key
         data.sort((a, b) => {
           let primaryKey = Object.keys(a)[0]
           return a[primaryKey] - b[primaryKey]
@@ -37,7 +38,10 @@ export default {
         this.results = data
         this.isLoading = false
       } catch (error) {
-        this.results = []
+        this.errors = error.message
+        if (!this.results) {
+          this.results = null
+        }
         this.isLoading = false
       }
     }

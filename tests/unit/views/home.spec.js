@@ -2,7 +2,10 @@ import {mount} from '@vue/test-utils'
 import {QueryService} from '@/services'
 import HomeView from '@/views/home.vue'
 
-const getResultsSpy = jest.spyOn(QueryService.prototype, 'getResults').mockResolvedValueOnce({data: ['mocked response']})
+const getResultsSpy = jest
+  .spyOn(QueryService.prototype, 'getResults')
+  .mockResolvedValueOnce({data: ['mocked response']})
+  .mockRejectedValueOnce(new Error('No result found'))
 
 describe('Home view component', () => {
   let wrapper
@@ -32,5 +35,17 @@ describe('Home view component', () => {
     await wrapper.vm.$nextTick()
     expect(wrapper.vm.isLoading).toBeFalsy()
     expect(wrapper.vm.results).toBeTruthy()
+  })
+
+  it('error if query does not exist', async () => {
+    const query = ''
+    wrapper.vm.submitQuery(query)
+    expect(wrapper.vm.isLoading).toBeTruthy()
+    await wrapper.vm.$nextTick()
+    expect(getResultsSpy).toHaveBeenCalled()
+    await wrapper.vm.$nextTick()
+    expect(wrapper.vm.isLoading).toBeFalsy()
+    expect(wrapper.vm.results).toBeFalsy()
+    expect(wrapper.vm.errors).toEqual('No result found')
   })
 })
